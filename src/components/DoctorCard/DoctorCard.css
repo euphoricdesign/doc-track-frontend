@@ -1,0 +1,28 @@
+.doctor-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .doctor-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .doctor-info {
+    margin-top: 10px;
+  }
+  
+  .doctor-info h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .doctor-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+  

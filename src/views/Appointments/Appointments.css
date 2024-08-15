@@ -1,0 +1,110 @@
+.table-container {
+    border-collapse: collapse;
+    background: #fff;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 10px;
+    overflow: auto; 
+}
+
+table {
+    border-collapse: collapse;
+    width: 1200px;
+}
+thead {
+    color: white;
+    background: #2760a7;
+    font-size: 15px;
+    font-weight: 400;
+}
+tbody {
+    font-weight: 400;
+    color: #6c6d6e;
+    font-size: 14px;
+}
+th {
+    font-weight: 400;
+}
+th,td {
+    padding: 18px;
+}     
+
+.add-appointment {
+    background-color: #2760a7;
+    color: white;
+    width: 130px;
+    padding: 10px;
+    margin-bottom: 19px;
+    margin-top: 19px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-appointment:hover {
+    background-color: #13498b;
+}
+
+.cancelled {
+    background: #cd2121;
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.active {
+    background: #21cd77;
+    padding: 8px 10px;
+    border-radius: 20px;
+    color: white;
+    font-size: 12px;
+}
+
+.no-turns-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #707070;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .success-message {
+    margin-top: 16px;
+    padding: 12px 16px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #2e7d32;
+    display: flex;
+    align-items: center;
+  }
+  
+  .success-message svg {
+    margin-right: 8px;
+    color: #4caf50;
+  }
+
+  .table-container::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    border-radius: 50px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: #957FEF;
+    border-radius: 50px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: #7161EF;
+    border-radius: 50px;
+}

@@ -1,0 +1,22 @@
+.button-container {
+    display: flex;
+    justify-content: end;
+}
+
+.button-sm {
+    background-color: rgb(205, 33, 33);
+    color: white;
+    width: 105;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.button-sm:hover {
+    background-color: rgb(189, 22, 22);
+
+}
+

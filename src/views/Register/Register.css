@@ -1,0 +1,57 @@
+form {
+    width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .register-button {
+    background-color: #2760a7;
+    color: white;
+    padding: 10px 20px;
+    margin-top:15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .register-button:hover {
+    background-color: #13498b;
+  }
+
+  .error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .warning-message {
+    color: rgb(249, 190, 95);
+    font-size: 14px;
+    margin-bottom: 15px;
+  }

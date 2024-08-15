@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f3f9ff;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+input:focus {
+  outline: none; 
+}
+
+.container {
+  margin: 40px auto;
+  padding: 10px;
+}
+
+::selection {
+  background-color: #2760a7;
+  color: #fff;
+}
+
+button.disabled {
+  pointer-events: none;
+  opacity: 0.5; 
+}
