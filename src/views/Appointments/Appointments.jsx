@@ -95,9 +95,12 @@ const Appointments = () => {
     <>
       <p className="no-turns-message">
         No appointments at the moment
-        <Link to="/appointments/schedule">
-          <button className="add-appointment">Add appointment</button>
-        </Link>
+        <button className="add-appointment">
+          <Link to="/appointments/schedule">Add appointment</Link>
+          <div className="arrow-wrapper">
+            <div className="arrow"></div>
+          </div>
+        </button>
       </p>
     </>
   );

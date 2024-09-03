@@ -13,7 +13,7 @@ table {
 }
 thead {
     color: white;
-    background: #2760a7;
+    /* background: #2760a7; */
     font-size: 15px;
     font-weight: 400;
 }
@@ -25,10 +25,18 @@ tbody {
 th {
     font-weight: 400;
 }
+
+.rdp-head tr th {
+    padding: 5px;
+}
 th,td {
     padding: 18px;
-}     
-
+}
+/* 
+.rdp-button {
+    background-color: #2760a7;
+} */
+/* 
 .add-appointment {
     background-color: #2760a7;
     color: white;
@@ -44,7 +52,72 @@ th,td {
 
 .add-appointment:hover {
     background-color: #13498b;
-}
+} */
+
+.add-appointment {
+    --primary-color: #4f6dcf;
+    --secondary-color: #fff;
+    --hover-color: #3e61d5;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 20px;
+    color: var(--secondary-color);
+    padding: .7em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    width: 200px;
+    font-size: 14px;
+  }
+  
+ .add-appointment .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+ .add-appointment .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+ .add-appointment .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+ .add-appointment:hover {
+    background-color: var(--hover-color);
+  }
+  
+ .add-appointment:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+ .add-appointment:hover .arrow:before {
+    right: 0;
+  }
 
 .cancelled {
     background: #cd2121;
@@ -70,7 +143,6 @@ th,td {
     height: 300px;
     font-size: 24px;
     font-weight: bold;
-    color: #707070;
     border-radius: 8px;
     padding: 20px;
     text-align: center;
