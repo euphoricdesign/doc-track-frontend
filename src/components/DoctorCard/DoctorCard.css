@@ -1,9 +1,15 @@
 .doctor-card {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 8px;
     padding: 20px;
     width: 280px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+
+  .doctor-card:hover {
+    transform:  scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
   .doctor-card img {
@@ -20,9 +26,24 @@
     font-size: 18px;
   }
   
-  .doctor-info p {
+  .doctor-info .specialty {
+    background: #e8f0fbe0;
     margin: 5px 0 0;
-    font-size: 14px;
-    color: #666;
+    font-size: 12px;
+    color: #4f6dcf;
+    display: inline-block;
+    /* width: 100px; */
+    font-weight: 800;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 12px;
   }
   
+  .doctor-info p {
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .doctor-info p span {
+    color: #0000008c;
+  }
