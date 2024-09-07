@@ -1,25 +1,80 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import { IoIosSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DoctorModal from "../../components/DoctoModal/DoctorModal";
 import "./DoctorList.css";
+import { getEnvVariables } from "../../helpers/getEnvVariables";
+import { setCategories } from "../../redux/categoriesSlice";
+import axios from "axios";
 
 const DoctorList = () => {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
-  const doctorsData = useSelector((state) => state.doctors.doctors);
+  
+  // const doctors = useSelector((state) => state.doctors.doctors);
+  const [doctors, setDoctors] = useState([])
+console.log(doctors)
+  const [selectedCategory, setSelectedCategory] = useState("ALL")  
 
-  console.log(selectedDoctor);
+  const categories = useSelector((state) => state.categories.categories)
+
+  const dispatch = useDispatch()
+
+  const envVars = getEnvVariables();
 
   const handleDoctorClick = (doctor) => {
-    console.log(doctor);
     setSelectedDoctor(doctor);
   };
 
   const handleCloseModal = () => {
     setSelectedDoctor(null);
   };
+
+  const getCategories = async () => {
+    const response = await axios.get(`${envVars.VITE_BACK_URL}/categories`);
+    const categories = response.data.categories;
+    dispatch(setCategories(categories));
+
+  }
+
+  const getDoctorsData = async () => {
+    try {
+      if (selectedCategory !== "ALL") {
+        const data = await axios.get(`${envVars.VITE_BACK_URL}/doctors?category=${selectedCategory}`);
+        const doctors = data.data;
+        setDoctors(doctors)
+      } else {
+        const data = await axios.get(`${envVars.VITE_BACK_URL}/doctors`);
+        const doctors = data.data;
+        setDoctors(doctors)
+      }
+
+    } catch (error) {
+      console.error("Error fetching doctors data:", error);
+    }
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+  };
+
+  useEffect(() => {
+    getCategories()
+  }, [])
+
+  useEffect(() => {
+    getDoctorsData()
+  }, [selectedCategory])
+
+  useEffect(() => {
+    const cards = document.querySelectorAll(".card-container > div");
+    cards.forEach((card) => {
+      card.style.animation = "none"; // Resetea la animación
+      card.offsetHeight; // Fuerza un reflow
+      card.style.animation = ""; // Reactiva la animación
+    });
+  }, [doctors]);
 
   return (
     <div className="container">
@@ -45,33 +100,47 @@ const DoctorList = () => {
           alignItems: "center",
           boxShadow:
             "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)",
+          textTransform: "uppercase"
         }}
       >
         <Link
+          onClick={() => handleCategoryClick('ALL')}
           style={{
-            backgroundColor: "#4f6dcf",
-            padding: "5px 25px",
-            color: "white",
+            backgroundColor: selectedCategory === 'ALL' ? "#4f6dcf" : "transparent",
+            padding: selectedCategory === 'ALL' && "5px 25px",
+            color: selectedCategory === 'ALL' ? "white" : "#0000008c",
             borderRadius: "20px",
             width: "125px",
             textAlign: "center",
+            // transition: "background-color 0.1s ease, color 0.1s ease",
           }}
         >
           ALL
         </Link>
-        <Link>CARDIOLOGY</Link>
-        <Link>ORTHOPEDICS</Link>
-        <Link>ONCOLOGY</Link>
-        <Link>DERMATOLOGY</Link>
-        <Link>SERGERY</Link>
-        <Link>GINOCOLOGY</Link>
+        {
+          categories.length && categories.map((category) => (
+            <Link
+              key={category.id}
+              onClick={() => handleCategoryClick(category.name)}
+              style={{
+                backgroundColor: selectedCategory === category.name ? "#4f6dcf" : "transparent",
+                padding: selectedCategory === category.name && "5px 25px",
+                color: selectedCategory === category.name ? "white" : "#0000008c",
+                borderRadius: "20px",
+                textAlign: "center",
+                // transition: "background-color 0.1s ease, color 0.1s ease"
+              }}
+            >
+              {category.name}
+            </Link>
+          ))
+        }
       </div>
 
       <div className="card-container">
-        {doctorsData.map((doctor) => (
-          <div onClick={() => handleDoctorClick(doctor)}>
+        {doctors.map((doctor) => (
+          <div key={doctor.id} onClick={() => handleDoctorClick(doctor)}>
             <DoctorCard
-              key={doctor.id}
               name={doctor.name}
               specialty={doctor.categories[0].name}
               image={doctor.image}

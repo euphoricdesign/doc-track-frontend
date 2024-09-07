@@ -17,6 +17,8 @@
 }
 
 .searchbar input {
+    padding: 20px 12px;    ;
+
     width: 100%;
     height: 100%;
     margin: 0;
