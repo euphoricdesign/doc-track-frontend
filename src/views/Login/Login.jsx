@@ -11,6 +11,7 @@ import {
   saveUserToLocalStorage,
 } from "../../helpers/localStorage";
 import { getEnvVariables } from "../../helpers/getEnvVariables";
+import NewLogin from "../../components/NewLogin";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -101,37 +102,7 @@ const Login = () => {
     }
   }, [dispatch]);
 
-  return (
-    <div className="container">
-      <h1 style={{ textAlign: "center" }}>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label>Username</label>
-        <input
-          className={errors.username ? "error" : ""}
-          type="text"
-          value={formData.username}
-          name="username"
-          onChange={handleInputChange}
-        />
-        {errors.username && <p className="error-message">{errors.username}</p>}
-
-        <label>Password</label>
-        <input
-          className={errors.password ? "error" : ""}
-          type="password"
-          value={formData.password}
-          name="password"
-          onChange={handleInputChange}
-        />
-        {errors.password && <p className="error-message">{errors.password}</p>}
-
-        <button className="register-button">Enviar</button>
-      </form>
-      <div className="signup-link">
-        Don't have an account? <Link to="/auth/register">Create one here</Link>
-      </div>
-    </div>
-  );
+  return <NewLogin />
 };
 
 export default Login;
