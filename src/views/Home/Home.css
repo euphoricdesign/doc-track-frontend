@@ -68,11 +68,12 @@
 }
 
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-    width: 1200px;
-    cursor: pointer;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+  gap: 22px;
+  width: 1200px;
+  cursor: pointer;
 }
 
 
@@ -97,7 +98,7 @@
   flex-direction: column;
 }
 
-.doctors button {
+.doctors .view-more-btn {
   --primary-color: #4f6dcf;
   --secondary-color: #fff;
   --hover-color: #3e61d5;
@@ -119,13 +120,13 @@
   font-weight: bold;
 }
 
-.doctors button .arrow-wrapper {
+.doctors .view-more-btn .arrow-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.doctors button .arrow {
+.doctors .view-more-btn .arrow {
   margin-top: 1px;
   width: var(--arrow-width);
   background: var(--primary-color);
@@ -134,7 +135,7 @@
   transition: 0.2s;
 }
 
-.doctors button .arrow::before {
+.doctors .view-more-btn .arrow::before {
   content: "";
   box-sizing: border-box;
   position: absolute;
@@ -148,14 +149,14 @@
   transform: rotate(-45deg);
 }
 
-.doctors button:hover {
+.doctors .view-more-btn:hover {
   background-color: var(--hover-color);
 }
 
-.doctors button:hover .arrow {
+.doctors .view-more-btn:hover .arrow {
   background: var(--secondary-color);
 }
 
-.doctors button:hover .arrow:before {
+.doctors .view-more-btn:hover .arrow:before {
   right: 0;
 }

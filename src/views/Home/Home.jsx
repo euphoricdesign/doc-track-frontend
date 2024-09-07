@@ -1,20 +1,23 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import img from "../../assets/doctor.svg";
+import { Link } from "react-router-dom";
 import DoctorCard from "../../components/DoctorCard/DoctorCard";
 import CategoryCard from "../../components/CategoryMiniCard/CategoryCard";
 import { categories } from "../../helpers/categories";
 import { TypeAnimation } from "react-type-animation";
 
-import "./Home.css";
-import axios from "axios";
-import { useEffect } from "react";
 import { getEnvVariables } from "../../helpers/getEnvVariables";
 import { setDoctors } from "../../redux/doctorSlice";
-import { Link } from "react-router-dom";
+import img from "../../assets/doctor.svg";
+import "./Home.css";
+import DoctorModal from "../../components/DoctoModal/DoctorModal";
 
 const Home = () => {
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+
   const user = useSelector((state) => state.user.user);
-  const doctorsData = useSelector((state) => state.doctors.doctors);
+  const doctors = useSelector((state) => state.doctors.doctors);
 
   const name = user.name.split(" ")[0];
 
@@ -30,6 +33,14 @@ const Home = () => {
     } catch (error) {
       console.error("Error fetching doctors data:", error);
     }
+  };
+
+  const handleDoctorClick = (doctor) => {
+    setSelectedDoctor(doctor);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedDoctor(null);
   };
 
   useEffect(() => {
@@ -74,22 +85,26 @@ const Home = () => {
         <div className="doctors">
           <h3>Our Doctors</h3>
           <div className="card-container">
-            {doctorsData.map((doctor) => (
-              <DoctorCard
-                key={doctor.id}
-                name={doctor.name}
-                specialty={doctor.categories[0].name}
-                image={doctor.image}
-                location={doctor.location}
-              />
+            {doctors.slice(0, 8).map((doctor) => (
+             <div key={doctor.id} onClick={() => handleDoctorClick(doctor)}>
+                <DoctorCard
+                  name={doctor.name}
+                  specialty={doctor.categories[0].name}
+                  image={doctor.image}
+                  location={doctor.location}
+                />
+             </div>
             ))}
           </div>
-          <button>
+          <button className="view-more-btn">
             <Link to="/doctors/info">View more</Link>
             <div className="arrow-wrapper">
               <div className="arrow"></div>
             </div>
           </button>
+          {selectedDoctor && (
+            <DoctorModal doctor={selectedDoctor} onClose={handleCloseModal} />
+          )}
         </div>
       </div>
     </>
