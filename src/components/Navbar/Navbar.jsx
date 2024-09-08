@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setUnAuthenticated } from "../../redux/userSlice";
 import { removeUserFromLocalStorage } from "../../helpers/localStorage";
+import { IoCalendar, IoHome, IoLogOutOutline } from "react-icons/io5";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -45,13 +46,13 @@ const Navbar = () => {
           <ul className="menu-links">
             <Link to="/">
               <li className="nav-link">
-                <i className="fa fa-home fa-lg icon"></i>
+                <IoHome className="icon" />
                 <span className="text nav-text">Home</span>
               </li>
             </Link>
             <Link to="/appointments">
               <li className="nav-link">
-                <i className="fa fa-calendar fa-lg icon"></i>
+                <IoCalendar className="icon" />
                 <span className="text nav-text">Appointments</span>
               </li>
             </Link>
