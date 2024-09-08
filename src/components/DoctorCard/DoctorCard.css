@@ -1,8 +1,9 @@
 .doctor-card {
     /* border: 1px solid #ccc; */
+    background-color: white;
     border-radius: 8px;
     padding: 20px;
-    width: 280px;
+    width: 283px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
   }
