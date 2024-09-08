@@ -14,24 +14,9 @@ export const validateForm = (fieldName, value) => {
 
     case "email":
       if (!value.trim()) {
-        console.log(value);
         error = "Email is required";
       } else if (!emailRegex.test(value)) {
         error = "Invalid email address";
-      }
-      break;
-
-    case "birthdate":
-      if (!value.trim()) {
-        error = "Date of birth is required";
-      } else if (dateRegex.test(value)) {
-        error = "The date format is incorrect. It should be: year/month/day.";
-      }
-      break;
-
-    case "nDni":
-      if (!value) {
-        error = "ID number is required";
       }
       break;
 

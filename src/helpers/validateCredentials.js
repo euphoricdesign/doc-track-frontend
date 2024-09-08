@@ -6,9 +6,7 @@ import { getEnvVariables } from "./getEnvVariables";
 
 export const validateCredential = async (credentials) => {
   const envVars = getEnvVariables();
-
-  console.log(envVars);
-
+  
   const dispatch = useDispatch();
   const response = await axios.post(
     `${envVars.VITE_BACK_URL}/users/login`,
