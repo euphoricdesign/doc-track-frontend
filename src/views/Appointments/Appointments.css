@@ -13,7 +13,7 @@ table {
 }
 thead {
     color: white;
-    /* background: #2760a7; */
+    /* background: #4f6dcf; */
     font-size: 15px;
     font-weight: 400;
 }
@@ -32,27 +32,12 @@ th {
 th,td {
     padding: 18px;
 }
-/* 
-.rdp-button {
-    background-color: #2760a7;
-} */
-/* 
-.add-appointment {
-    background-color: #2760a7;
-    color: white;
-    width: 130px;
-    padding: 10px;
-    margin-bottom: 19px;
-    margin-top: 19px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 12px;
-}
 
-.add-appointment:hover {
-    background-color: #13498b;
-} */
+
+.custom-shadow {
+    /* border-radius: 16px; */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}
 
 .add-appointment {
     --primary-color: #4f6dcf;
@@ -62,7 +47,7 @@ th,td {
     --arrow-stroke: 2px;
     cursor: pointer;
     align-self: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     box-sizing: border-box;
     border: 0;
     border-radius: 20px;
@@ -180,3 +165,76 @@ th,td {
     background: #7161EF;
     border-radius: 50px;
 }
+
+/* Estilos para el contenedor principal de la tabla */
+.appointments-table .appointments-table-container {
+    width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f7f9fc; /* Fondo gris claro */
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  }
+  
+  /* Estilos para la tabla */
+  .appointments-table .appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Inter', sans-serif; /* Fuente moderna */
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Estilos para las celdas de encabezado de la tabla */
+  .appointments-table .appointments-table th {
+    padding: 16px;
+    background-color: #fafafa; /* Fondo blanco */
+    color: #555;
+    border-bottom: 2px solid #e3e6eb; /* Línea separadora sutil */
+    text-align: left;
+    font-weight: 500;
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  .appointments-table .appointments-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e3e6eb; /* Línea separadora sutil */
+  }
+  
+  /* Estilos para las filas pares de la tabla */
+  .appointments-table .appointments-table tbody tr:nth-child(even) {
+    background-color: #fafafa; /* Fondo gris muy claro */
+  }
+  
+  /* Efecto hover para las filas */
+  .appointments-table .appointments-table tbody tr:hover {
+    background-color: #eef2f7; /* Cambio de color al pasar el mouse */
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilos para los botones */
+  .appointments-table .action-btn {
+    padding: 6px 7px;
+    margin-right: 5px;
+    background-color: #4f6dcf; /* Azul moderno */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Efecto hover para los botones */
+  .appointments-table .action-btn:hover {
+    background-color: #3e61d5; /* Azul más oscuro */
+    transform: translateY(-2px); /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra al elevarse */
+  }
+  
+  /* Efecto activo para los botones */
+  .appointments-table .action-btn:active {
+    background-color: #3e61d5; /* Azul aún más oscuro */
+    transform: translateY(0); /* Sin elevación */
+    box-shadow: none; /* Sin sombra */
+  }
