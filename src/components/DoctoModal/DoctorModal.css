@@ -70,9 +70,11 @@
 .available-times {
   display: flex;
   flex-direction: column;
-
 }
 
+.available-times h4 {
+  margin-bottom: 20px;
+}
 
 .modal-overlay {
   position: fixed;
@@ -83,8 +85,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 1000;
+  padding-top: 150px;
 }
 
 .modal-content {
@@ -112,7 +115,7 @@
 .confirm-button {
   --primary-color: #4f6dcf;
   --secondary-color: #fff;
-  --hover-color: #3e61d5;
+  --hover-color: rgba(79, 109, 207, 0.945);
   --arrow-width: 10px;
   --arrow-stroke: 2px;
   cursor: pointer;
