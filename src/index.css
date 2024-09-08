@@ -126,6 +126,10 @@ body {
   padding: 0;
 }
 
+div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
+  background-color: #4f6dcf;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-size: 1.5em; /* Tamaño de fuente decreciente desde h1 hasta h6 */
   font-weight: bold; /* Negrita */
@@ -172,7 +176,7 @@ input:focus {
 }
 
 ::selection {
-  background-color: #2760a7;
+  background-color: #4f6dcf;
   color: #fff;
 }
 
@@ -186,3 +190,7 @@ button.disabled {
 }
 
 
+
+.data-\[side\=bottom\]\:slide-in-from-top-2[data-side="bottom"] {
+  z-index: 2000;
+}
