@@ -76,12 +76,12 @@ const Appointments = () => {
       <table className="appointments-table">
         <thead>
           <tr>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Médico</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Doctor</th>
             {/* <th>Notas</th> */}
-            <th>Estado</th>
-            <th>Acciones</th>
+            <th>State</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
