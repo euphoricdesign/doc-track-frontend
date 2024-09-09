@@ -11,15 +11,15 @@ import category10 from "../assets/category11.svg";
 import category11 from "../assets/category12.svg";
 
 export const categories = [
-  { id: category1, category: category1 },
-  { id: category2, category: category2 },
-  { id: category3, category: category3 },
-  { id: category4, category: category4 },
-  { id: category5, category: category5 },
-  { id: category6, category: category6 },
-  { id: category7, category: category7 },
-  { id: category8, category: category8 },
-  { id: category9, category: category9 },
-  { id: category10, category: category10 },
-  { id: category11, category: category11 },
+  { id: 1, category: category1, name: 'dental' },
+  { id: 2, category: category2, name: 'vision' },
+  { id: 3, category: category3, name: 'cardiology' },
+  { id: 4, category: category4, name: 'laboratory' },
+  { id: 5, category: category5, name: 'general' },
+  { id: 6, category: category6, name: 'ent' },
+  { id: 7, category: category7, name: 'physical-therapy' },
+  { id: 8, category: category8, name: 'emergency' },
+  { id: 9, category: category9, name: 'hospitalization' },
+  { id: 10, category: category10, name: 'temperature' },
+  { id: 11, category: category11, name: 'nutrition' },
 ];
