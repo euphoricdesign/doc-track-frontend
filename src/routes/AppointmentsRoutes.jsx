@@ -4,6 +4,7 @@ import Appointments from "../views/Appointments/Appointments";
 import AppointmentForm from "../views/Appointments/AppointmentForm";
 import Navbar from "../components/Navbar/Navbar";
 import DoctorList from "../views/DoctorList/DoctorList";
+import ProceduresDashboard from "../components/ProceduresDashboard/ProceduresDashboard";
 
 export const AppointmentsRoutes = () => {
   return (
@@ -16,6 +17,7 @@ export const AppointmentsRoutes = () => {
           <Route path="/doctors/info" element={<DoctorList />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/appointments/schedule" element={<AppointmentForm />} />
+          <Route path="/category/:type" element={<ProceduresDashboard />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
       </div>
