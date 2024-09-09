@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import "./CardCategory.css";
 
-const CategoryCard = ({ categorySvg }) => {
+const CategoryCard = ({ categorySvg, categoryName }) => {
   return (
     <div className="card">
-      <div className="card-content">
-        <img src={categorySvg} alt="categoria" />
-      </div>
+      <Link to={`category/${categoryName}`}>
+        <div className="card-content">
+          <img src={categorySvg} alt="categoria" />
+        </div>
+      </Link>
     </div>
   );
 };

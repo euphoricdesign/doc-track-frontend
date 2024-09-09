@@ -77,7 +77,7 @@ const Home = () => {
           <h3>Categories</h3>
           <div className="card-category-container">
             {categories.map((category) => (
-              <CategoryCard key={category.id} categorySvg={category.category} />
+              <CategoryCard key={category.id} categorySvg={category.category} categoryName={category.name} />
             ))}
           </div>
         </div>
